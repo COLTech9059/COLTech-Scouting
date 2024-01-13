@@ -98,221 +98,112 @@
 
         </div><!-- /.row -->
 
-        <hr class="mt-4 mb-1">
-        <div class="row">
-          <div class="col">
-            <label for="DockedStatus-input" class="form-label">Dock Status(Auto)</label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="DockAuto-input" id="DockAuto-1" value="1" required>
-              <label class="form-check-label" for="DockAuto-1">
-                Not Docked
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="DockAuto-input" id="DockAuto-2" value="2" required>
-              <label class="form-check-label" for="DockAuto-2">
-                Docked
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="DockAuto-input" id="DockAuto-3" value="3" required>
-              <label class="form-check-label" for="DockAuto-3">
-                Docked/Engaged
-              </label>
-            </div>
-          </div>
-          <div class="col">
+        <div class="card card-body bg-light mt-4">
+
+            <h1>Auto</h1>
+
             <div class="row">
-                <label class="form-check-label" for="Parked-input">Parked</label>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" id="Parked-input">
-              </div>
-              <div class="row">
-                <label class="form-check-label" for="CompatAuto-input">CompatAuto</label>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" id="CompatAuto-input">
+            <div class="col">
+                <label for="Moved-input" class="form-label">Left Zone?</label>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="Moved-input" id="Moved-1" value="1" required>
+                <label class="form-check-label" for="Moved-1">
+                    Yes
+                </label>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-                <label class="form-check-label" for="PiecesScored-input">Pieces Scored</label>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" id="PiecesScored-input">
-          </div>
-        </div>
-
-        <hr class="mt-4 mb-1">
-
-        <div class="row">
-          <div class="col">
-            High
-            <a class="btn btn-success btn-huge form-control" href="javascript:changeValue($('#High-input'),1)">+1</a>
-          </div>
-          <div class="col">
-          Medium
-            <a class="btn btn-success btn-huge form-control" href="javascript:changeValue($('#Medium-input'),1)">+1</a>
-          </div>
-          <div class="col">
-          Low
-            <a class="btn btn-success btn-huge form-control" href="javascript:changeValue($('#Low-input'),1)">+1</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-          <input type="number" class="form-control" id="High-input" min="0" value="0" required>
-          
-          </div>
-      <div class="col">
-          <input type="number" class="form-control" id="Medium-input" min="0" value="0" required>
-          
-          </div>
-      <div class="col">
-          <input type="number" class="form-control" id="Low-input" min="0" value="0" required>
-          
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-          <a class="btn btn-danger form-control" href="javascript:changeValue($('#High-input'),-1)">-1</a>
-          </div>
-          <div class="col">
-          <a class="btn btn-danger form-control" href="javascript:changeValue($('#Medium-input'),-1)">-1</a>
-          </div>
-          <div class="col">
-          <a class="btn btn-danger form-control" href="javascript:changeValue($('#Low-input'),-1)">-1</a>
-          </div>
-        </div>
-
-        <hr class="mt-4 mb-1">
-
-        <div class="row">
-          <div class="col">
-            <label for="DockEnd-input" class="form-label">Dock Status</label>
-
-            <!--Options for docked status-->
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="DockEnd-input" id="DockEnd-1" value="1" required>
-              <label class="form-check-label" for="DockEnd-1">
-                Not Docked
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="DockEnd-input" id="DockEnd-2" value="2" required>
-              <label class="form-check-label" for="DockEnd-2">
-                Docked
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="DockEnd-input" id="DockEnd-3" value="3" required>
-              <label class="form-check-label" for="DockEnd-3">
-                Docked/Engaged
-              </label>
-            </div>
-          </div>
-
-            <!--Options for Type Scored-->
-          <div class="col">
-            <label for="PrefStart-input" class="form-label">Type Scored</label>
-        
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="TypeScored-input" id="TypeScored-1" value="1" required>
-              <label class="form-check-label" for="TypeScored-1">
-                Cones
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="TypeScored-input" id="TypeScored-2" value="2" required>
-              <label class="form-check-label" for="TypeScored-2">
-                Cubes
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="TypeScored-input" id="TypeScored-3" value="3" required>
-              <label class="form-check-label" for="TypeScored-3">
-                Both
-              </label>
-            </div>
-          </div>
-          <div class="col">
-            <div class="row">
-              <label for="DriveSkill-input" class="form-label">Driving Skill</label>
-              <input type="range" class="form-range" id="DriveSkill-input" min="1" max="5">
-            </div>
-            <div class="row">
-              <label for="Aggression-input" class="form-label">Aggression</label>
-              <input type="range" class="form-range" id="Aggression-input" min="1" max="5">
-            </div>
-          </div>
-        </div>
-                  <!--Outlier and Defense Only-->
-        <div class="row">
-          <div class="col">
-            <label for="PrefStart-input" class="form-label">Cycle Time</label>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="CycleTime-input" id="CycleTime-1" value="1" required>
-              <label class="form-check-label" for="CycleTime-1">
-                Fast
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="CycleTime-input" id="CycleTime-2" value="2" required>
-              <label class="form-check-label" for="CycleTime-2">
-                Medium
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="CycleTime-input" id="CycleTime-3" value="3" required>
-              <label class="form-check-label" for="CycleTime-3">
-                Slow
-              </label>
-            </div>
-          </div>
-          <div class="col">
-            <div class="row">
-              <label class="form-check-label" for="Outlier-input">Outlier</label>
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="Outlier-input">
-              </div>
-            </div>
-            <div class="row">
-              <label class="form-check-label" for="BreakImpact-input">Break Impact</label>
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="BreakImpact-input">
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="row">
-              <label class="form-check-label" for="DefenseOnly-input">Defense Only</label>
-              <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="DefenseOnly-input">
-              </div>
-            </div>
-            <div class="row">
-              <label class="form-check-label" for="Penalty-input">Penalty</label>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" id="Penalty-input">
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="Moved-input" id="Moved-0" value="0" required>
+                <label class="form-check-label" for="Moved-0">
+                    No
+                </label>
                 </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <label class="form-check-label" for="Ground-input">Pickup Ground</label>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="Ground-input">
             </div>
-          </div>
-          <div class="col">
-            <label class="form-check-label" for="Shelf-input">Pickup Shelf</label>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="Shelf-input">
-              </div>
-          </div>
-          <div class="col">
-              <label for="PiecePref" class="form-label">Cone &lt; - &gt; Cube Preference</label>
-              <input type="range" class="form-range" id="PiecePref" min="1" max="5">
+            <label class="form-check-label" for="AutoSpeaker-input">Auto Speaker</label>
+            <div class="row">
+                <div class="col">
+                    <a class="btn btn-success form-control" href="javascript:changeValue($('#AutoSpeaker-input'),1)">+1</a>
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" id="AutoSpeaker-input" min="0" value="0" required>
+                </div>
+                <div class="col">
+                    <a class="btn btn-danger form-control" href="javascript:changeValue($('#AutoSpeaker-input'),-1)">-1</a>
+                </div>
+            </div>
+            <label class="form-check-label" for="AutoAmp-input">Auto Amp</label>
+            <div class="row">
+                <div class="col">
+                    <a class="btn btn-success form-control" href="javascript:changeValue($('#AutoAmp-input'),1)">+1</a>
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" id="AutoAmp-input" min="0" value="0" required>
+                </div>
+                <div class="col">
+                    <a class="btn btn-danger form-control" href="javascript:changeValue($('#AutoAmp input'),-1)">-1</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-body bg-light mt-4">
+
+            <h1>Score</h1>
+
+                <label class="form-check-label" for="Speaker-input">Speaker</label>
+                <div class="row">
+                    <div class="col">
+                        <a class="btn btn-success form-control" href="javascript:changeValue($('#Speaker-input'),1)">+1</a>
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" id="Speaker-input" min="0" value="0" required>
+                    </div>
+                    <div class="col">
+                        <a class="btn btn-danger form-control" href="javascript:changeValue($('#Speaker-input'),-1)">-1</a>
+                    </div>
+                </div>
+                <label class="form-check-label" for="Amp-input">Amp</label>
+                <div class="row">
+                    <div class="col">
+                        <a class="btn btn-success form-control" href="javascript:changeValue($('#Amp-input'),1)">+1</a>
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" id="Amp-input" min="0" value="0" required>
+                    </div>
+                    <div class="col">
+                        <a class="btn btn-danger form-control" href="javascript:changeValue($('#Amp input'),-1)">-1</a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="card card-body bg-light mt-4">
+
+            <h1>Information</h1>
+
+            <div class="row">
+                <div class="col">
+                    <label for="DockEnd-input" class="form-label">Pickup Location</label>
+
+                    <!--Options for docked status-->
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ground-input" id="Ground-0" value="0" required>
+                        <label class="form-check-label" for="Ground-0">
+                            Ground
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Station-input" id="Station-1" value="1" required>
+                        <label class="form-check-label" for="Station-1">
+                            Station
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="PickUpBoth-input" id="PickupBoth-2" value="2" required>
+                        <label class="form-check-label" for="PickupBoth-2">
+                            Both
+                        </label>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="row">
