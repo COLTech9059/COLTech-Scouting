@@ -26,6 +26,11 @@
         --bs-btn-padding-x: 3rem;
         --bs-btn-font-size: 5rem;
       }
+      .btn-big {
+        --bs-btn-padding-y: 1rem;
+        --bs-btn-padding-x: 1rem;
+        --bs-btn-font-size: 2rem;
+      }
       #qrcode img {
         display: inline-block !important;
         margin: 2rem 0rem;
@@ -41,10 +46,11 @@
           </div>
         </div>
         <div class="row">
-
-          <div class="col">
+    
+          <div class="col-md">
             <label for="TeamNumber-input" class="form-label">Team Number</label>
-            <select class="form-control" id="TeamNumber-input" required onchange="$('#TeamName-input').val(this.options[this.selectedIndex].dataset.teamname);">
+            <select class="form-control" id="TeamNumber-input" required
+              onchange="$('#TeamName-input').val(this.options[this.selectedIndex].dataset.teamname);">
               <option disabled selected value="">(select team)</option>
               <!-- Change team numbers here -->
               <option value="60" data-teamname="Bionic Bulldogs">60</option>
@@ -73,150 +79,159 @@
               <option value="7755" data-teamname="Phantom Circuts">7755</option>
               <option value="9059" data-teamname="COLTech">9059</option>
               <option value="9091" data-teamname="A.W.E">9091</option>
-
-              
-              
+    
+    
+    
             </select>
             <!--<input type="number" class="form-control" id="TeamNumber-input" min="1" required>-->
-            <div class="invalid-feedback">
-              Please set the team number.
-            </div>
+            <div class="invalid-feedback">Please set the team number.</div>
           </div>
-
-          <div class="col">
+    
+          <div class="col-md">
             <label for="TeamName-input" class="form-label">Team Name</label>
             <input type="text" class="form-control" id="TeamName-input">
           </div>
-
-          <div class="col">
+    
+          <div class="col-md">
             <label for="Match-input" class="form-label">Match</label>
             <input type="number" class="form-control" id="Match-input" min="1" required>
-            <div class="invalid-feedback">
-              Please set the match number.
-            </div>
+    
+            <div class="invalid-feedback">Please set the match number.</div>
           </div>
-
+    
         </div><!-- /.row -->
-
+    
         <div class="card card-body bg-light mt-4">
-
-            <h1>Auto</h1>
-
-            <div class="row">
-            <div class="col">
-                <label for="Moved-input" class="form-label">Left Zone?</label>
-                <div class="form-check">
+    
+          <h2>Auto</h2>
+    
+          <div class="row">
+            <div class="col-md">
+              <label for="Moved-input" class="form-label">Left Zone?</label>
+              <div class="form-check">
                 <input class="form-check-input" type="radio" name="Moved-input" id="Moved-1" value="1" required>
-                <label class="form-check-label" for="Moved-1">
-                    Yes
-                </label>
-                </div>
-                <div class="form-check">
+                <label class="form-check-label" for="Moved-1">Yes</label>
+              </div>
+    
+              <div class="form-check">
                 <input class="form-check-input" type="radio" name="Moved-input" id="Moved-0" value="0" required>
-                <label class="form-check-label" for="Moved-0">
-                    No
-                </label>
-                </div>
+                <label class="form-check-label" for="Moved-0">No</label>
+                <div class="invalid-feedback">Please indicate if the robot left the zone.</div>
+              </div>
+    
             </div>
+          </div><!-- /.row -->
+    
+          <div class="row">
+            <label class="form-label" for="AutoSpeaker-input">Auto Speaker</label>
+            <div class="col">
+              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#AutoSpeaker-input'),1)">+1</a>
             </div>
-            <label class="form-check-label" for="AutoSpeaker-input">Auto Speaker</label>
-            <div class="row">
-                <div class="col">
-                    <a class="btn btn-success form-control" href="javascript:changeValue($('#AutoSpeaker-input'),1)">+1</a>
-                </div>
-                <div class="col">
-                    <input type="number" class="form-control" id="AutoSpeaker-input" min="0" value="0" required>
-                </div>
-                <div class="col">
-                    <a class="btn btn-danger form-control" href="javascript:changeValue($('#AutoSpeaker-input'),-1)">-1</a>
-                </div>
+    
+            <div class="col">
+              <input type="number" class="form-control mt-4" id="AutoSpeaker-input" min="0" value="0" required>
             </div>
-            <label class="form-check-label" for="AutoAmp-input">Auto Amp</label>
-            <div class="row">
-                <div class="col">
-                    <a class="btn btn-success form-control" href="javascript:changeValue($('#AutoAmp-input'),1)">+1</a>
-                </div>
-                <div class="col">
-                    <input type="number" class="form-control" id="AutoAmp-input" min="0" value="0" required>
-                </div>
-                <div class="col">
-                    <a class="btn btn-danger form-control" href="javascript:changeValue($('#AutoAmp input'),-1)">-1</a>
-                </div>
+    
+            <div class="col">
+              <a class="btn btn-big btn-danger form-control"
+                href="javascript:changeValue($('#AutoSpeaker-input'),-1)">-1</a>
             </div>
-        </div>
-
+          </div><!-- /.row -->
+    
+          <div class="row">
+            <label class="form-label" for="AutoAmp-input">Auto Amp</label>
+            <div class="col">
+              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#AutoAmp-input'),1)">+1</a>
+            </div>
+    
+            <div class="col">
+              <input type="number" class="form-control mt-4" id="AutoAmp-input" min="0" value="0" required>
+            </div>
+    
+            <div class="col">
+              <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#AutoAmp-input'),-1)">-1</a>
+            </div>
+          </div><!-- /.row -->
+        </div><!-- /.card -->
+    
+    
         <div class="card card-body bg-light mt-4">
-
-            <h1>Score</h1>
-
-                <label class="form-check-label" for="Speaker-input">Speaker</label>
-                <div class="row">
-                    <div class="col">
-                        <a class="btn btn-success form-control" href="javascript:changeValue($('#Speaker-input'),1)">+1</a>
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control" id="Speaker-input" min="0" value="0" required>
-                    </div>
-                    <div class="col">
-                        <a class="btn btn-danger form-control" href="javascript:changeValue($('#Speaker-input'),-1)">-1</a>
-                    </div>
-                </div>
-                <label class="form-check-label" for="Amp-input">Amp</label>
-                <div class="row">
-                    <div class="col">
-                        <a class="btn btn-success form-control" href="javascript:changeValue($('#Amp-input'),1)">+1</a>
-                    </div>
-                    <div class="col">
-                        <input type="number" class="form-control" id="Amp-input" min="0" value="0" required>
-                    </div>
-                    <div class="col">
-                        <a class="btn btn-danger form-control" href="javascript:changeValue($('#Amp input'),-1)">-1</a>
-                    </div>
-                </div>
-        </div>
-
-        <div class="card card-body bg-light mt-4">
-
-            <h1>Information</h1>
-
-            <div class="row">
-                <div class="col">
-                    <label for="DockEnd-input" class="form-label">Pickup Location</label>
-
-                    <!--Options for docked status-->
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ground-input" id="Ground-0" value="0" required>
-                        <label class="form-check-label" for="Ground-0">
-                            Ground
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Station-input" id="Station-1" value="1" required>
-                        <label class="form-check-label" for="Station-1">
-                            Station
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="PickUpBoth-input" id="PickupBoth-2" value="2" required>
-                        <label class="form-check-label" for="PickupBoth-2">
-                            Both
-                        </label>
-                    </div>
-                </div>
-
+    
+          <h2>Score</h2>
+    
+          <label class="form-label" for="Speaker-input">Speaker</label>
+          <div class="row">
+            <div class="col">
+              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#Speaker-input'),1)">+1</a>
             </div>
-        </div>
+    
+            <div class="col">
+              <input type="number" class="form-control mt-4" id="Speaker-input" min="0" value="0" required>
+            </div>
+    
+            <div class="col">
+              <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#Speaker-input'),-1)">-1</a>
+            </div>
+          </div><!-- /.row -->
+    
+          <label class="form-label" for="Amp-input">Amp</label>
+          <div class="row">
+            <div class="col">
+              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#Amp-input'),1)">+1</a>
+            </div>
+            <div class="col">
+              <input type="number" class="form-control mt-4" id="Amp-input" min="0" value="0" required>
+            </div>
+            <div class="col">
+              <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#Amp-input'),-1)">-1</a>
+            </div>
+          </div><!-- /.row -->
+        </div><!-- /.card -->
+    
+    
+        <div class="card card-body bg-light mt-4">
+    
+          <h2>Information</h2>
+    
+          <div class="row">
+            <div class="col-md">
+              <label for="pickup-input" class="form-label">Pickup Location</label>
+    
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="pickup-input" id="pickup-0" value="0" required>
+                <label class="form-check-label" for="pickup-0">Ground</label>
+              </div>
+    
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="pickup-input" id="pickup-1" value="1" required>
+                <label class="form-check-label" for="pickup-1">Station</label>
+              </div>
+    
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="pickup-input" id="pickup-2" value="2" required>
+                <label class="form-check-label" for="pickup-2">Both</label>
+                <div class="invalid-feedback">Please indicate where the robot can pick up notes</div>
+              </div>
+    
+            </div>
+    
+    
+          </div><!-- /.row -->
+        </div><!-- /.card -->
+    
+    
+    
         <div class="row">
-          <div class="col">
+          <div class="col-md">
             <label class="form-label" for="Comment-input">Comment</label>
             <textarea class="form-control" id="Comment-input" rows="6"></textarea>
           </div>
-          <div class="col">
+          <div class="col-md">
             <a href="javascript:updateQR()" class="btn btn-primary form-control" style="margin-top: 2.5rem;">Get Code</a>
             <div id="qrcode"></div>
           </div>
-        </div>
-
+        </div><!-- /.row -->
+    
       </div><!-- /.container-->
     </form>
 
