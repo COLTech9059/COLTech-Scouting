@@ -3,6 +3,7 @@
   <head>
     <title>2486 - Coconuts Scouting</title>
     <script src="assets/jquery-3.6.1.min.js"></script>
+    <script src="assets/bootstrap.min.js"></script>
     <script src="assets/qrcode.min.js"></script>
     <script src="sw.js"></script>
     <link rel="stylesheet" href="assets/bootstrap.min.css">
@@ -35,6 +36,9 @@
         display: inline-block !important;
         margin: 2rem 0rem;
       }
+      #modalQRCode img {
+        margin:auto;
+      }
       @media (prefers-color-scheme: dark) {
         body {
           background-color:rgb(46, 46, 46);
@@ -46,6 +50,9 @@
         input,select,textarea {
           background-color: rgb(46, 46, 46) !important;
           color: azure !important;
+        }
+        .modal-content {
+          background-color:rgb(87, 87, 87)
         }
       }
     </style>
@@ -212,17 +219,22 @@
     
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="pickup-input" id="pickup-0" value="0" required>
-                <label class="form-check-label" for="pickup-0">Ground</label>
+                <label class="form-check-label" for="pickup-0">Neither</label>
               </div>
     
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="pickup-input" id="pickup-1" value="1" required>
-                <label class="form-check-label" for="pickup-1">Station</label>
+                <label class="form-check-label" for="pickup-1">Ground</label>
               </div>
     
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="pickup-input" id="pickup-2" value="2" required>
-                <label class="form-check-label" for="pickup-2">Both</label>
+                <label class="form-check-label" for="pickup-2">Station</label>
+              </div>
+    
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="pickup-input" id="pickup-3" value="3" required>
+                <label class="form-check-label" for="pickup-3">Both</label>
                 <div class="invalid-feedback">Please indicate where the robot can pick up notes</div>
               </div>
     
@@ -235,61 +247,82 @@
     
     
         <div class="row">
-          <div class="col-md">
+          <div class="col-md-8">
             <label class="form-label" for="Comment-input">Comment</label>
             <textarea class="form-control" id="Comment-input" rows="6"></textarea>
           </div>
-          <div class="col-md">
-            <a href="javascript:updateQR()" class="btn btn-primary form-control" style="margin-top: 2.5rem;">Get Code</a>
-            <div id="qrcode"></div>
+          <div class="col-md-4">
+            <a href="javascript:showCodeModal()" class="btn btn-primary btn-big form-control mt-5" >Get Code</a>
           </div>
         </div><!-- /.row -->
     
       </div><!-- /.container-->
     </form>
 
+    <!-- Modal -->
+    <div class="modal fade" id="codeModal" tabindex="-1" aria-labelledby="codeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="codeModalLabel">Data</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <div id="modalQRCode"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script type="text/javascript">
+
       function changeValue(ctl,val) {
         ctl.val( isNaN(parseInt(ctl.val())) ? 1 : parseInt(ctl.val()) + val );
         if (ctl.val() < 0) {ctl.val("0")}
       }
-      function updateQR() {
+      
+      const codeModal = new bootstrap.Modal('#codeModal', {});
+      function showCodeModal() {
         $('body').addClass('was-validated');
-        $("#qrcode").html(""); // clear the QR div's previous content
+        $('#modalQRCode').html(""); // clear the QR div's previous content
+        $('#codeModalLabel').html('Team ' + $('#TeamNumber-input').val() + ' ' + $('#TeamName-input').val() + ' - Match '+ $('#Match-input').val());
         if ($(
                 '#TeamNumber-input:valid').length > 0
               && $('#Match-input:valid').length > 0
-              && $("input[Name='DockAuto-input']:valid").length > 0
-              && $("input[Name='DockEnd-input']:valid").length > 0
-              && $("input[Name='TypeScored-input']:valid").length > 0
-              && $("input[Name='CycleTime-input']:valid").length > 0
+//              && $("input[Name='DockAuto-input']:valid").length > 0
+//              && $("input[Name='DockEnd-input']:valid").length > 0
+//              && $("input[Name='TypeScored-input']:valid").length > 0
+//              && $("input[Name='CycleTime-input']:valid").length > 0
         ){
           var data= '{'
                   + '"TeamNumber":'     + JSON.stringify($("#TeamNumber-input").val())
                   + ',"TeamName":'      + JSON.stringify($("#TeamName-input").val())
                   + ',"Match":'         + JSON.stringify($("#Match-input").val())
-                  + ',"DockAuto":'      + JSON.stringify($("input[name='DockAuto-input']:checked").val())
-                  + ',"Parked":'        + JSON.stringify(Number($("#Parked-input").is(":checked")))
-                  + ',"CompatAuto":'    + JSON.stringify(Number($("#CompatAuto-input").is(":checked")))
-                  + ',"PiecesScored":'  + JSON.stringify(Number($("#PiecesScored-input").is(":checked")))
-                  + ',"High":'          + JSON.stringify($("#High-input").val())
-                  + ',"Medium":'        + JSON.stringify($("#Medium-input").val())
-                  + ',"Low":'           + JSON.stringify($("#Low-input").val())
-                  + ',"DockEnd":'       + JSON.stringify($("input[name='DockEnd-input']:checked").val())
-                  + ',"TypeScored":'    + JSON.stringify($("input[name='TypeScored-input']:checked").val())
-                  + ',"DriveSkill":'    + JSON.stringify($("#DriveSkill-input").val())
-                  + ',"Aggression":'    + JSON.stringify($("#Aggression-input").val())
-                  + ',"CycleTime":'     + JSON.stringify($("input[name='CycleTime-input']:checked").val())
-                  + ',"Outlier":'       + JSON.stringify(Number($("#Outlier-input").is(":checked")))
-                  + ',"BreakImpact":'   + JSON.stringify(Number($("#BreakImpact-input").is(":checked")))
-                  + ',"DefenseOnly":'   + JSON.stringify(Number($("#DefenseOnly-input").is(":checked")))
-                  + ',"Penalty":'       + JSON.stringify(Number($("#Ground-input").is(":checked")))
-                  + ',"ShelfPickup":'   + JSON.stringify(Number($("#Shelf-input").is(":checked")))
-                  + ',"GroundPickup":'  + JSON.stringify(Number($("#Penalty-input").is(":checked")))
+//                  + ',"DockAuto":'      + JSON.stringify($("input[name='DockAuto-input']:checked").val())
+//                  + ',"Parked":'        + JSON.stringify(Number($("#Parked-input").is(":checked")))
+//                  + ',"CompatAuto":'    + JSON.stringify(Number($("#CompatAuto-input").is(":checked")))
+//                  + ',"PiecesScored":'  + JSON.stringify(Number($("#PiecesScored-input").is(":checked")))
+//                  + ',"High":'          + JSON.stringify($("#High-input").val())
+//                  + ',"Medium":'        + JSON.stringify($("#Medium-input").val())
+//                  + ',"Low":'           + JSON.stringify($("#Low-input").val())
+//                  + ',"DockEnd":'       + JSON.stringify($("input[name='DockEnd-input']:checked").val())
+//                  + ',"TypeScored":'    + JSON.stringify($("input[name='TypeScored-input']:checked").val())
+//                  + ',"DriveSkill":'    + JSON.stringify($("#DriveSkill-input").val())
+//                  + ',"Aggression":'    + JSON.stringify($("#Aggression-input").val())
+//                  + ',"CycleTime":'     + JSON.stringify($("input[name='CycleTime-input']:checked").val())
+//                  + ',"Outlier":'       + JSON.stringify(Number($("#Outlier-input").is(":checked")))
+//                  + ',"BreakImpact":'   + JSON.stringify(Number($("#BreakImpact-input").is(":checked")))
+//                  + ',"DefenseOnly":'   + JSON.stringify(Number($("#DefenseOnly-input").is(":checked")))
+//                  + ',"Penalty":'       + JSON.stringify(Number($("#Ground-input").is(":checked")))
+//                  + ',"ShelfPickup":'   + JSON.stringify(Number($("#Shelf-input").is(":checked")))
+//                  + ',"GroundPickup":'  + JSON.stringify(Number($("#Penalty-input").is(":checked")))
                   + ',"Comment":'       + JSON.stringify($("#Comment-input").val())
-                  + ',"PiecePref":'     + JSON.stringify($("#PiecePref").val())
                   + '}';
-          new QRCode(document.getElementById("qrcode"), {text:data,width:480,height:480,correctLevel:QRCode.CorrectLevel.L});
+          new QRCode(document.getElementById("modalQRCode"), {text:data,width:480,height:480,correctLevel:QRCode.CorrectLevel.L});
+          codeModal.show();
         }
       }
     </script>
