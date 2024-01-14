@@ -38,6 +38,7 @@
       }
       #modalQRCode img {
         margin:auto;
+        border: 1rem solid white;
       }
       @media (prefers-color-scheme: dark) {
         body {
@@ -261,10 +262,10 @@
 
     <!-- Modal -->
     <div class="modal fade" id="codeModal" tabindex="-1" aria-labelledby="codeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="codeModalLabel">Data</h5>
+            <h5 class="modal-title" id="codeModalLabel">Code</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body text-center">
@@ -321,7 +322,8 @@
 //                  + ',"GroundPickup":'  + JSON.stringify(Number($("#Penalty-input").is(":checked")))
                   + ',"Comment":'       + JSON.stringify($("#Comment-input").val())
                   + '}';
-          new QRCode(document.getElementById("modalQRCode"), {text:data,width:480,height:480,correctLevel:QRCode.CorrectLevel.L});
+          new QRCode(document.getElementById("modalQRCode"), {text:data,width:800,height:800,correctLevel:QRCode.CorrectLevel.L});
+          $('#modalQRCode > img').addClass('img-fluid');
           codeModal.show();
         }
       }

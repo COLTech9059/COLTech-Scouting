@@ -1,11 +1,13 @@
-const cacheName = "CocoNutsScouting_2024-01-13_2";
+const cacheName = "CocoNutsScouting_2024-01-13_3";
 const precacheResources = [
     "/CocoNuts-Scouting/",
     "/CocoNuts-Scouting/index.html",
     "/CocoNuts-Scouting/assets/qrcode.min.js",
     "/CocoNuts-Scouting/assets/bootstrap.min.css",
     "/CocoNuts-Scouting/assets/bootstrap.min.css.map",
-    "/CocoNuts-Scouting/assets/jquery-3.6.1.min.js"
+    "/CocoNuts-Scouting/assets/jquery-3.6.1.min.js",
+    "/CocoNuts-Scouting/assets/bootstrap.min.js",
+    "/CocoNuts-Scouting/assets/bootstrap.min.js.map"
 ];
 
 if ("serviceWorker" in navigator) {
