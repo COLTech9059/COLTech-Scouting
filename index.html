@@ -242,10 +242,34 @@
                 <label class="form-check-label" for="pickup-3">Both</label>
                 <div class="invalid-feedback">Please indicate where the robot can pick up notes</div>
               </div>
-    
+
             </div>
+            <div class="col-md">
+              <label for="climb-input" class="form-label">Climb</label>
     
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="climb-input" id="pickup-0" value="0" required>
+                <label class="form-check-label" for="climb-0">No</label>
+              </div>
+              <div class="col-md">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="climb-input" id="climb-1" value="1" required>
+                  <label class="form-check-label" for="pickup-1">First</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="climb-input" id="climb-2" value="2" required>
+                  <label class="form-check-label" for="climb-2">After</label>
+                </div>
+                  <div class="invalid-feedback">Please indicate where the robot can climb on the chain</div>
+                </div>
+              </div>
+            </div>
+            
+          </div><!--end of row-->
     
+          <div class="row">
             <div class="col-md">
               <label for="broken-input" class="form-label">Broken</label>
     
@@ -273,37 +297,6 @@
                 <input class="form-check-input" type="radio" name="disabled-input" id="disabled-0" value="0" required>
                 <label class="form-check-label" for="disabled-0">No</label>
                 <div class="invalid-feedback">Please indicate wheither the robot was disabled or not</div>
-              </div>
-            </div>
-          </div><!--end of row-->
-
-        </div><!-- /.card -->
-
-        <div class="card card-body bg-light mt-4">
-    
-          <h2>Climb</h2>
-    
-          <div class="row">
-            <div class="col-md">
-              <label for="climb-input" class="form-label">Climb</label>
-    
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="climb-input" id="pickup-0" value="0" required>
-                <label class="form-check-label" for="climb-0">No</label>
-              </div>
-              <div class="col-md">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="climb-input" id="climb-1" value="1" required>
-                  <label class="form-check-label" for="pickup-1">First</label>
-                </div>
-              </div>
-              <div class="col-md">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="climb-input" id="climb-2" value="2" required>
-                  <label class="form-check-label" for="climb-2">After</label>
-                </div>
-                  <div class="invalid-feedback">Please indicate where the robot can climb on the chain</div>
-                </div>
               </div>
             </div>
     
