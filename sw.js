@@ -1,4 +1,4 @@
-const cacheName = "CocoNutsScouting_2024-01-29_3";
+const cacheName = "CocoNutsScouting_2024-01-29_4";
 const precacheResources = [
     "/CocoNuts-Scouting/",
     "/CocoNuts-Scouting/index.html",
@@ -51,3 +51,5 @@ self.addEventListener('activate', event => {
     })
   );
 });
+
+//https://coconuts2486-frc.github.io/CocoNuts-Scouting/
