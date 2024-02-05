@@ -69,6 +69,18 @@
           <div class="col text-end">
             <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
           </div>
+          <div class="col-md">
+            <label for="Theme-input" class="form-label">Theme</label>
+            <select class="form-control" id="Theme-input" 
+            onchange="$('#Theme-input').val(this.options[this.selectedIndex].dataset.background);">
+              <option disabled selected value="">(theme)</option>
+
+              <option value="light" data-background="bg-light"></option>
+              <option value=“dark” data-background=“bg-dark”></option>
+              <option value=“spirit” data-background=“red”></option>
+              <option value=“plasma” data-background=“purple”></option>
+            </select>
+          </div>
         </div>
         <div class="row">
     
