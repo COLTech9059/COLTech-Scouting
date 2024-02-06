@@ -71,17 +71,26 @@
       <div class="container">
         <div class="row">
           <div class="col-md">
-            <button onclick="myFunction()">Dark Mode</button>
+            <button onclick="you()">Check?</button>
             <script>
-              function myFunction() {
+              function you() {
                 var theme = document.body;
-                element.classList.toggle("dark-mode")
+                element.classList.toggle("")
               }
             </script>
           </div>
           <div class="col text-end">
             <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
           </div>
+            <div class="cold-md">
+              <button onclick="Theme()">Dark Mode</button>
+              <script>
+                function Theme() {
+                  var theme = document.body;
+                  element.classList.toggle("Theme")
+                }
+              </script>
+            </div>
           <!--<div class="col-md">            Button theme testing
             <label for="Theme-input" class="form-label">Theme</label>
             <select class="form-control" id="Theme-input" 
