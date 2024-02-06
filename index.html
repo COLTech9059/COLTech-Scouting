@@ -60,16 +60,29 @@
           background-color:rgb(87, 87, 87)
         }
       }
+      .dark-mode{
+        background-color: black;
+        color:azure;
+      }
     </style>
   </head>
   <body>
     <form>
       <div class="container">
         <div class="row">
+          <div class="col-md">
+            <button onclick="myFunction()">Dark Mode</button>
+            <script>
+              function myFunction() {
+                var theme = document.body;
+                element.classList.toggle("dark-mode")
+              }
+            </script>
+          </div>
           <div class="col text-end">
             <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
           </div>
-          <div class="col-md">
+          <!--<div class="col-md">            Button theme testing
             <label for="Theme-input" class="form-label">Theme</label>
             <select class="form-control" id="Theme-input" 
             onchange="$('#Theme-input').val(this.options[this.selectedIndex].dataset.background);">
@@ -80,7 +93,7 @@
               <option value=“spirit” data-background=“red”>spirit</option>
               <option value=“plasma” data-background=“purple”>plasma</option>
             </select>
-          </div>
+          </div> -->
         </div>
         <div class="row">
     
