@@ -62,10 +62,10 @@
             <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
           </div>
             <div class="cold-md">
-              <button onclick="Theme()">Dark Mode</button>
+              <input type="theme" onclick="Theme()">Dark Mode</button>
               <script>
                 function Theme() {
-                  var theme = document.body;
+                  var element = document.body;
                   element.classList.toggle("Theme")
                 }
               </script>
