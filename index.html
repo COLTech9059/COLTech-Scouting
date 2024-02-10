@@ -71,28 +71,24 @@
           <div class="col text-end">
             <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
           </div>
-            <div class="cold-md">
-              <input type="theme" onclick="Dark()">Dark Mode</button>
+
+            <div class="col-md">
+              <input type="dark" onclick="Dark()">Dark Mode</button>
               <script>
                 function Dark() {
                   var element = document.body;
                   element.classList.toggle("Dark")
                 }
-
               </script>
             </div>
             
-            <div class="col text-end">
-              <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
-            </div>
-              <div class="cold-md">
-                <input type="theme" onclick="Spirit()">Spirit Mode</button>
+              <div class="col-md">
+                <input type="spirit" onclick="Spirit()">Spirit Mode</button>
                 <script>
                   function Spirit() {
                     var element = document.body;
                     element.classList.toggle("Spirit")
                   }
-  
                 </script>
               </div>
 
