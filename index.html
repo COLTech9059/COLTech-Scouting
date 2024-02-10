@@ -60,19 +60,29 @@
         .card.bg-light { background-color:rgb(109, 1, 1) !important; }
         input,select,textarea { background-color: rgb(255, 244, 89) !important; color: rgb(255, 255, 255) !important; }
       }
+      .Plasma{
+        background-color: rgb(86, 0, 136) !important;
+        color:rgb(146, 0, 195) !important;
+        .card.bg-light { background-color:rgb(57, 0, 74) !important; }
+        input,select,textarea { background-color: rgb(164, 0, 230) !important; color: rgb(255, 255, 255) !important; }
+      }
 
     </style>
   </head>
   <body>
     <form>
+
       <!--Old dark mode stuff-->
       <!--@media (prefers-color-scheme: dark) { body { background-color:rgb(30, 0, 57); color:azure; } .card.bg-light { background-color:rgb(120, 0, 134) !important; } input,select,textarea { background-color: rgb(46, 46, 46) !important; color: azure !important; } .modal-content { background-color:rgb(87, 87, 87) } }-->
+
       <div class="container">
         <div class="row">
           <div class="col text-end">
             <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
           </div>
+        </div>
 
+        <div class="row">
             <div class="col-md">
               <input type="dark" onclick="Dark()">Dark Mode</button>
               <script>
@@ -93,19 +103,17 @@
                 </script>
               </div>
 
-          <!--<div class="col-md">            Button theme testing
-            <label for="Theme-input" class="form-label">Theme</label>
-            <select class="form-control" id="Theme-input" 
-            onchange="$('#Theme-input').val(this.options[this.selectedIndex].dataset.background);">
-              <option disabled selected value="">(theme)</option>
-
-              <option value="light" data-background="bg-light">light</option>
-              <option value=“dark” data-background=“bg-dark”>dark</option>
-              <option value=“spirit” data-background=“red”>spirit</option>
-              <option value=“plasma” data-background=“purple”>plasma</option>
-            </select>
-          </div> -->
+              <div class="col-md">
+                <input type="plasma" onclick="Plasma()">Plasma Mode</div>
+                <script>
+                  function Plasma() {
+                    var element = document.body;
+                    element.classList.toggle("Plasma")
+                  }
+                </script>
+              </div>
         </div>
+
         <div class="row">
     
           <div class="col-md">
