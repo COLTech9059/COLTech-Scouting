@@ -66,7 +66,10 @@
         .card.bg-light { background-color:rgb(57, 0, 74) !important; }
         input,select,textarea { background-color: rgb(43, 0, 60) !important; color: rgb(255, 255, 255) !important; }
       }
-
+      .reset{
+        background-color: black;
+        color:azure;
+      }
 
     </style>
   </head>
@@ -116,6 +119,15 @@
                 </script>
               </div>
 
+          </div>
+          <div class="col-md">
+            <button onclick="myFunction()">Reset</button>
+            <script>
+              function myFunction() {
+                var theme = document.body;
+                element.classList.toggle("reset-mode")
+              }
+            </script>
           </div>
 
         </div>
