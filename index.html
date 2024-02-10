@@ -48,10 +48,16 @@
         background-color:white;
         color:black;
       }
-      .Theme{
+      .Dark{
         background-color: rgb(46, 46, 46) !important;
         color:azure !important;
         .card.bg-light { background-color:rgb(70, 70, 70) !important; }
+
+      }
+      .Spirit{
+        background-color: rgb(221, 0, 0) !important;
+        color:rgb(211, 211, 0) !important;
+        .card.bg-light { background-color:rgb(109, 1, 1) !important; }
 
       }
     </style>
@@ -66,14 +72,30 @@
             <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
           </div>
             <div class="cold-md">
-              <input type="theme" onclick="Theme()">Dark Mode</button>
+              <input type="theme" onclick="Dark()">Dark Mode</button>
               <script>
-                function Theme() {
+                function Dark() {
                   var element = document.body;
-                  element.classList.toggle("Theme")
+                  element.classList.toggle("Dark")
                 }
+
               </script>
             </div>
+            
+            <div class="col text-end">
+              <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
+            </div>
+              <div class="cold-md">
+                <input type="theme" onclick="Spirit()">Spirit Mode</button>
+                <script>
+                  function Spirit() {
+                    var element = document.body;
+                    element.classList.toggle("Spirit")
+                  }
+  
+                </script>
+              </div>
+
           <!--<div class="col-md">            Button theme testing
             <label for="Theme-input" class="form-label">Theme</label>
             <select class="form-control" id="Theme-input" 
