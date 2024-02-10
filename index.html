@@ -66,6 +66,12 @@
         .card.bg-light { background-color:rgb(57, 0, 74) !important; }
         input,select,textarea { background-color: rgb(43, 0, 60) !important; color: rgb(255, 255, 255) !important; }
       }
+      .Reset{
+        background-color: rgb(0, 0, 0) !important;
+        color:rgb(255, 255, 255) !important;
+        .card.bg-light { background-color:rgb(0, 0, 0) !important; }
+        input,select,textarea { background-color: rgb(0, 0, 0) !important; color: rgb(0, 0, 0) !important; }
+      }
 
     </style>
   </head>
@@ -82,18 +88,28 @@
           </div>
         </div>
 
+        <div class="col-md">
+          <input type="plasma" onclick="Plasma()">Plasma Mode</div>
+          <script>
+            function Plasma() {
+              var element = document.body;
+              element.classList.toggle("Plasma")
+            }
+          </script>
+        </div>
+
         <div class="row">
           <div class="col-md">
             <div class="col-md">
-              <input type="dark" onclick="Dark()">Dark Mode</button>
+              <input type="reset" onclick="Reset()">load</input>
               <script>
-                function Dark() {
+                function Reset() {
                   var element = document.body;
-                  element.classList.toggle("Dark")
+                  element.classList.toggle("Reset")
                 }
               </script>
             </div>
-            
+
               <div class="col-md">
                 <input type="spirit" onclick="Spirit()">Spirit Mode</div>
                 <script>
