@@ -458,25 +458,23 @@
                 '#TeamNumber-input:valid').length > 0
               && $('#Match-input:valid').length > 0
 //              && $("input[Name='Moved-input']:valid").length > 0
-//              && $("input[Name='DockEnd-input']:valid").length > 0
 //              && $("input[Name='role-input']:valid").length > 0
-//              && $("input[Name='CycleTime-input']:valid").length > 0
         ){
           var data= '{'
                   + '"TeamNumber":'     + JSON.stringify($("#TeamNumber-input").val())
                   + ',"TeamName":'      + JSON.stringify($("#TeamName-input").val())
                   + ',"Match":'         + JSON.stringify($("#Match-input").val())
-//                  + ',"Moved":'         + JSON.stringify($("input[name='Moved-input']:checked").val())
-//                  + ',"AutoSpeaker":'   + JSON.stringify($("input[name='AutoSpeaker-input']:checked").val())
-//                  + ',"AutoAmp":'       + JSON.stringify($("input[name='AutoAmp-input']:checked").val())
-//                  + ',"Speaker":'       + JSON.stringify($("#Speaker-input").val())
-//                  + ',"Amp":'           + JSON.stringify($("#Amp-input").val())
-//                  + ',"Trap":'          + JSON.stringify($("#Trap-input").val())
-//                  + ',"pickup":'        + JSON.stringify($("input[name='pickup-input']:checked").val())
-//                  + ',"climb":'         + JSON.stringify($("input[name='climb-input']:checked").val())
-//                  + ',"role":'          + JSON.stringify($("input[name='role-input']:checked").val())
-//                  + ',"broken":'        + JSON.stringify($("input[name='broken-input']:checked").val())
-//                  + ',"disabled":'      + JSON.stringify($("input[name='disabled-input']:checked").val())
+                  + ',"Moved":'         + JSON.stringify($("input[name='Moved-input']:checked").val())
+                  + ',"AutoSpeaker":'   + JSON.stringify($("input[name='AutoSpeaker-input']:checked").val())
+                  + ',"AutoAmp":'       + JSON.stringify($("input[name='AutoAmp-input']:checked").val())
+                  + ',"Speaker":'       + JSON.stringify($("#Speaker-input").val())
+                  + ',"Amp":'           + JSON.stringify($("#Amp-input").val())
+                  + ',"Trap":'          + JSON.stringify($("#Trap-input").val())
+                  + ',"pickup":'        + JSON.stringify($("input[name='pickup-input']:checked").val())
+                  + ',"climb":'         + JSON.stringify($("input[name='climb-input']:checked").val())
+                  + ',"role":'          + JSON.stringify($("input[name='role-input']:checked").val())
+                  + ',"broken":'        + JSON.stringify($("input[name='broken-input']:checked").val())
+                  + ',"disabled":'      + JSON.stringify($("input[name='disabled-input']:checked").val())
                   + ',"Comment":'       + JSON.stringify($("#Comment-input").val())
                   + '}';
           new QRCode(document.getElementById("modalQRCode"), {text:data,width:800,height:800,correctLevel:QRCode.CorrectLevel.L});
