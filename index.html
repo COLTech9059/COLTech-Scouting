@@ -91,7 +91,17 @@
           <script>
             function Dark() {
               var element = document.body;
-              element.classList.toggle("Dark")
+              element.addClass("Dark").removeClass("Spirit").removeClass("Plasma")
+            }
+          </script>
+        </div>
+
+        <div class="col-md">
+          <input type="button" value="Light Mode" onclick="Light()"/>
+          <script>
+            function Light() {
+              var element = document.body;
+              element.removeClass("Dark").removeClass("Spirit").removeClass("Plasma")
             }
           </script>
         </div>
@@ -104,7 +114,7 @@
                 <script>
                   function Spirit() {
                     var element = document.body;
-                    element.classList.toggle("Spirit")
+                    element.addClass("Spirit").removeClass("Dark").removeClass("Plasma")
                   }
                 </script>
               </div>
@@ -114,7 +124,7 @@
                 <script>
                   function Plasma() {
                     var element = document.body;
-                    element.classList.toggle("Plasma")
+                    element.addClass("Plasma").removeClass("Dark").removeClass("Spirit")
                   }
                 </script>
               </div>
