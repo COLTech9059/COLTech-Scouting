@@ -90,16 +90,8 @@
           <input type="button" value="Dark Mode" onclick="Dark()"/>
           <script>
             function Dark() {
-              $("document.body").addClass("Dark").removeClass("Spirit").removeClass("Plasma")
-            }
-          </script>
-        </div>
-
-        <div class="col-md">
-          <input type="button" value="Light Mode" onclick="Light()"/>
-          <script>
-            function Light() {
-              $("document.body").removeClass("Dark").removeClass("Spirit").removeClass("Plasma")
+              var element = document.body;
+              element.classList.toggle("Dark")
             }
           </script>
         </div>
@@ -111,7 +103,8 @@
                 <input type="button" value="Spirit Mode" onclick="Spirit()"/>
                 <script>
                   function Spirit() {
-                    $("document.body").addClass("Spirit").removeClass("Dark").removeClass("Plasma")
+                    var element = document.body;
+                    element.classList.toggle("Spirit")
                   }
                 </script>
               </div>
@@ -120,7 +113,8 @@
                 <input type="button" value="Plasma Mode" onclick="Plasma()"/>
                 <script>
                   function Plasma() {
-                    $("document.body").addClass("Plasma").removeClass("Dark").removeClass("Spirit")
+                    var element = document.body;
+                    element.classList.toggle("Spirit")
                   }
                 </script>
               </div>
