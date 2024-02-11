@@ -87,7 +87,7 @@
         </div>
 
         <div class="col-md">
-          <input type="dark" onclick="Dark()">Dark Mode</input>
+          <input type="button" value="Dark Mode" onclick="Dark()"/>
           <script>
             function Dark() {
               var element = document.body;
@@ -100,7 +100,7 @@
           <div class="col-md">
 
               <div class="col-md">
-                <input type="spirit" onclick="Spirit()">Spirit Mode</input>
+                <input type="button" value="Spirit Mode" onclick="Spirit()"/>
                 <script>
                   function Spirit() {
                     var element = document.body;
@@ -110,7 +110,7 @@
               </div>
 
               <div class="col-md">
-                <input type="plasma" onclick="Plasma()">Plasma Mode</input>
+                <input type="button" value="Plasma Mode" onclick="Plasma()"/>
                 <script>
                   function Plasma() {
                     var element = document.body;
@@ -276,7 +276,7 @@
           <label class="form-label" for="Trap-input">Trap</label>
           <div class="row">
             <div class="col">
-              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#Tap-input'),1)">+1</a>
+              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#Trap-input'),1)">+1</a>
             </div>
     
             <div class="col">
@@ -457,7 +457,14 @@
         if ($(
                 '#TeamNumber-input:valid').length > 0
               && $('#Match-input:valid').length > 0
-//              && $("input[Name='Moved-input']:valid").length > 0
+              && $('#Moved-input:valid').length > 0
+              && $("input[Name='Moved-input']:valid").length > 0
+              && $("input[Name='pickup-input']:valid").length > 0
+              && $("input[Name='climb-input']:valid").length > 0
+              && $("input[Name='role-input']:valid").length > 0
+              && $("input[Name='broken-input']:valid").length > 0
+              && $("input[Name='disabled-input']:valid").length > 0
+
 //              && $("input[Name='role-input']:valid").length > 0
         ){
           var data= '{'
