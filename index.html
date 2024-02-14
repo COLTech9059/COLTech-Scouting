@@ -80,13 +80,14 @@
       <!--@media (prefers-color-scheme: dark) { body { background-color:rgb(30, 0, 57); color:azure; } .card.bg-light { background-color:rgb(120, 0, 134) !important; } input,select,textarea { background-color: rgb(46, 46, 46) !important; color: azure !important; } .modal-content { background-color:rgb(87, 87, 87) } }-->
 
       <div class="container">
+        <div class="row"><!--Formating--></div>
         <div class="row">
           <div class="col text-end">
             <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
           </div>
         </div>
 
-        <div class="col-md">
+        <div class="row-md">
           <input type="button" value="Dark Mode" onclick="Dark()"/>
           <script>
             function Dark() {
@@ -96,10 +97,10 @@
           </script>
         </div>
 
-        <div class="row">
-          <div class="col-md">
+        <div class="col-md">
+          <div class="row-md">
 
-              <div class="col-md">
+              <div class="row-md">
                 <input type="button" value="Spirit Mode" onclick="Spirit()"/>
                 <script>
                   function Spirit() {
@@ -109,7 +110,7 @@
                 </script>
               </div>
 
-              <div class="col-md">
+              <div class="row-md">
                 <input type="button" value="Plasma Mode" onclick="Plasma()"/>
                 <script>
                   function Plasma() {
@@ -121,7 +122,7 @@
 
           </div>
           <div class="col-md">
-            <button onclick="myFunction()">Reset</button>
+            <button onclick="myFunction()">Load Newest Version</button>
             <script>
               function myFunction() {
                 var theme = document.body;
