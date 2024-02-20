@@ -82,7 +82,7 @@
       <div class="container">
         <div class="row"><!--Formating--></div>
         <div class="row">
-            <div class="col-md">
+            <div class="col text-center">
               <button onclick="myFunction()">Load Newest Version</button>
               <script>
                 function MyFunction(){
@@ -97,20 +97,19 @@
             </div>
 
         </div>
-
-        <div class="row-md">
-          <input type="button" value="Dark Mode" onclick="Dark()"/>
-          <script>
-            function Dark() {
-              var element = document.body;
-              element.classList.toggle("Dark")
-            }
-          </script>
-        </div>
-
-        <div class="col-md">
+        <div class ="col text-center">
           <div class="row-md">
+            <input type="button" value="Dark Mode" onclick="Dark()"/>
+            <script>
+              function Dark() {
+                var element = document.body;
+                element.classList.toggle("Dark")
+              }
+            </script>
+          </div>
 
+          <div class="col-md">
+            <div class="row-md">
               <div class="col-md">
                 <input type="button" value="Spirit Mode" onclick="Spirit()"/>
                 <script>
@@ -131,6 +130,7 @@
                 </script>
               </div>
             </div>
+          </div>
         </div>
 
         <div class="row">
