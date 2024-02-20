@@ -66,7 +66,7 @@
         .card.bg-light { background-color:rgb(57, 0, 74) !important; }
         input,select,textarea { background-color: rgb(43, 0, 60) !important; color: rgb(255, 255, 255) !important; }
       }
-      .reset{
+      .load{
         background-color: black;
         color:azure;
       }
@@ -84,6 +84,13 @@
         <div class="row">
           <div class="col text-end">
             <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
+            <button onclick="myFunction()">Load Newest Version</button>
+            <script>
+              function MyFunction(){
+                var load = document.body;
+                element.classList.toggle("load-mode")
+              }
+            </script>
           </div>
         </div>
 
@@ -119,19 +126,9 @@
                   }
                 </script>
               </div>
-
-          </div>
-          <div class="col-md">
-            <button onclick="myFunction()">Load Newest Version</button>
-            <script>
-              function myFunction() {
-                var theme = document.body;
-                element.classList.toggle("reset-mode")
-              }
-            </script>
-          </div>
-
+            </div>
         </div>
+
         <div class="row">
     
           <div class="col-md">
