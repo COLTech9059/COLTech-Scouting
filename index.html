@@ -84,13 +84,16 @@
         <div class="row">
           <div class="col text-end">
             <input type="reset" value="Reset all fields" onClick="javascript:$('body').removeClass('was-validated');">
-            <button onclick="myFunction()">Load Newest Version</button>
-            <script>
-              function MyFunction(){
-                var load = document.body;
-                element.classList.toggle("load-mode")
-              }
-            </script>
+
+            <div class="col-md">
+              <button onclick="myFunction()">Load Newest Version</button>
+              <script>
+                function MyFunction(){
+                  var reset = document.body;
+                  element.classList.toggle("reset-mode")
+                }
+              </script>
+            </div>
           </div>
         </div>
 
