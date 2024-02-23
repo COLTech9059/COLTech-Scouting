@@ -72,7 +72,6 @@
       }
 
     </style>
-    <!--The part above is in Java-->
   </head>
   <body>
     <form>
@@ -200,7 +199,7 @@
         <div class="card card-body bg-light mt-4">
           <!--Auto Stuff-->
           <h2>Auto</h2>
-    
+          <!--Auto Mobility-->
           <div class="row">
             <div class="col-md">
               <label for="moved-input" class="form-label">Left Zone?</label>
@@ -217,23 +216,26 @@
     
             </div>
           </div><!-- /.row -->
-    
+          <!--Scoring in speaker during auto-->
           <label class="form-label" for="autoSpeaker-input">Auto Speaker</label>
           <div class="row">
             <div class="col">
+              <!--This makes a green button that when pressed increases the value by 1-->
               <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#autoSpeaker-input'),1)">+1</a>
             </div>
     
             <div class="col">
+              <!--Makes the minimum value 0-->
               <input type="number" class="form-control mt-2 input-lg" id="autoSpeaker-input" min="0" value="0" required>
             </div>
     
             <div class="col">
+              <!--This makes a red button that decreses the value by 1 when pressed-->
               <a class="btn btn-big btn-danger form-control"
                 href="javascript:changeValue($('#autoSpeaker-input'),-1)">-1</a>
             </div>
           </div><!-- /.row -->
-    
+          <!--scoring in amp during auto-->
           <label class="form-label" for="autoAmp-input">Auto Amp</label>
           <div class="row">
             <div class="col">
@@ -254,7 +256,7 @@
         <div class="card card-body bg-light mt-4">
           <!--TeleOp stuff-->
           <h2>Score</h2>
-    
+          <!--Scoring in speaker during teleOp-->
           <label class="form-label" for="speaker-input">Speaker</label>
           <div class="row">
             <div class="col">
@@ -269,7 +271,7 @@
               <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#speaker-input'),-1)">-1</a>
             </div>
           </div><!-- /.row -->
-    
+          <!--Scoring in amp during teleOp-->
           <label class="form-label" for="amp-input">Amp</label>
           <div class="row">
             <div class="col">
@@ -282,7 +284,7 @@
               <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#amp-input'),-1)">-1</a>
             </div>
           </div><!-- /.row -->
-    
+          <!--Scoring in trap-->
           <label class="form-label" for="trap-input">Trap</label>
           <div class="row">
             <div class="col">
@@ -297,7 +299,6 @@
               <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#trap-input'),-1)">-1</a>
             </div>
           </div><!-- /.row -->
-
         </div><!-- /.card -->
     
     
@@ -307,6 +308,7 @@
     
           <div class="row">
             <div class="col-md">
+              <!--Where the robot can pickup pieces from: ex. ground or human player station-->
               <label for="pickup-input" class="form-label">Pickup Location</label>
     
               <div class="form-check">
@@ -332,6 +334,7 @@
 
             </div>
             <div class="col-md">
+            <!--If the robot can climb the chain and if the can climb with another bot-->
               <label for="climb-input" class="form-label">Climb</label>
     
               <div class="form-check">
@@ -354,6 +357,7 @@
 
             </div>
             <div class="col-md">
+              <!--What role the robot plays, do they play defense or offense or something else-->
               <label for="role-input" class="form-label">Role</label>
       
               <div class="form-check">
@@ -378,6 +382,7 @@
           </div>  
           <div class="row">
             <div class="col-md">
+              <!--Did the robot break: ex. arm fell off, bumper fell off, robot explodes-->
               <label for="broken-input" class="form-label">Broken</label>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="broken-input" id="broken-1" value="1" required>
@@ -392,6 +397,7 @@
             </div>
 
             <div class="col-md">
+              <!--Did the robot get disabled during the match-->
               <label for="disabled-input" class="form-label">Disabled</label>
     
               <div class="form-check">
@@ -410,15 +416,14 @@
             <div class="col-md">
             
             </div>
-    
-    
           </div><!-- /.row -->
         </div><!-- /.card -->
     
-    
-    
+        
+
         <div class="row">
           <div class="col-md-8">
+            <!--any aditional things that can't be recorded manually-->
             <label class="form-label" for="comment-input">Comment</label>
             <textarea class="form-control" id="comment-input" rows="6"></textarea>
           </div>
