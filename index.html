@@ -142,9 +142,9 @@
     
           <div class="col-md">
             <!--These are the team numbers and corrasponding names in the drop down menu-->
-            <label for="TeamNumber-input" class="form-label">Team Number</label>
-            <select class="form-control" id="TeamNumber-input" required
-              onchange="$('#TeamName-input').val(this.options[this.selectedIndex].dataset.teamname);">
+            <label for="teamNumber-input" class="form-label">Team Number</label>
+            <select class="form-control" id="teamNumber-input" required
+              onchange="$('#teamName-input').val(this.options[this.selectedIndex].dataset.teamname);">
               <option disabled selected value="">(select team)</option>
               <!-- Change team numbers here -->
               <option value="60" data-teamname="Bionic Bulldogs">60</option>
@@ -184,13 +184,13 @@
           </div>
     
           <div class="col-md">
-            <label for="TeamName-input" class="form-label">Team Name</label>
-            <input type="text" class="form-control" id="TeamName-input">
+            <label for="teamName-input" class="form-label">Team Name</label>
+            <input type="text" class="form-control" id="teamName-input">
           </div>
     
           <div class="col-md">
-            <label for="Match-input" class="form-label">Match</label>
-            <input type="number" class="form-control" id="Match-input" min="1" required>
+            <label for="match-input" class="form-label">Match</label>
+            <input type="number" class="form-control" id="match-input" min="1" required>
     
             <div class="invalid-feedback">Please set the match number.</div>
           </div>
@@ -203,49 +203,49 @@
     
           <div class="row">
             <div class="col-md">
-              <label for="Moved-input" class="form-label">Left Zone?</label>
+              <label for="moved-input" class="form-label">Left Zone?</label>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="Moved-input" id="Moved-1" value="1" required>
-                <label class="form-check-label" for="Moved-1">Yes</label>
+                <input class="form-check-input" type="radio" name="moved-input" id="moved-1" value="1" required>
+                <label class="form-check-label" for="moved-1">Yes</label>
               </div>
     
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="Moved-input" id="Moved-0" value="0" required>
-                <label class="form-check-label" for="Moved-0">No</label>
+                <input class="form-check-input" type="radio" name="moved-input" id="moved-0" value="0" required>
+                <label class="form-check-label" for="moved-0">No</label>
                 <div class="invalid-feedback">Please indicate if the robot left the zone.</div>
               </div>
     
             </div>
           </div><!-- /.row -->
     
-          <label class="form-label" for="AutoSpeaker-input">Auto Speaker</label>
+          <label class="form-label" for="autoSpeaker-input">Auto Speaker</label>
           <div class="row">
             <div class="col">
-              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#AutoSpeaker-input'),1)">+1</a>
+              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#autoSpeaker-input'),1)">+1</a>
             </div>
     
             <div class="col">
-              <input type="number" class="form-control mt-2 input-lg" id="AutoSpeaker-input" min="0" value="0" required>
+              <input type="number" class="form-control mt-2 input-lg" id="autoSpeaker-input" min="0" value="0" required>
             </div>
     
             <div class="col">
               <a class="btn btn-big btn-danger form-control"
-                href="javascript:changeValue($('#AutoSpeaker-input'),-1)">-1</a>
+                href="javascript:changeValue($('#autoSpeaker-input'),-1)">-1</a>
             </div>
           </div><!-- /.row -->
     
-          <label class="form-label" for="AutoAmp-input">Auto Amp</label>
+          <label class="form-label" for="autoAmp-input">Auto Amp</label>
           <div class="row">
             <div class="col">
-              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#AutoAmp-input'),1)">+1</a>
+              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#autoAmp-input'),1)">+1</a>
             </div>
     
             <div class="col">
-              <input type="number" class="form-control mt-2 input-lg" id="AutoAmp-input" min="0" value="0" required>
+              <input type="number" class="form-control mt-2 input-lg" id="autoAmp-input" min="0" value="0" required>
             </div>
     
             <div class="col">
-              <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#AutoAmp-input'),-1)">-1</a>
+              <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#autoAmp-input'),-1)">-1</a>
             </div>
           </div><!-- /.row -->
         </div><!-- /.card -->
@@ -255,46 +255,46 @@
           <!--TeleOp stuff-->
           <h2>Score</h2>
     
-          <label class="form-label" for="Speaker-input">Speaker</label>
+          <label class="form-label" for="speaker-input">Speaker</label>
           <div class="row">
             <div class="col">
-              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#Speaker-input'),1)">+1</a>
+              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#speaker-input'),1)">+1</a>
             </div>
     
             <div class="col">
-              <input type="number" class="form-control mt-2 input-lg" id="Speaker-input" min="0" value="0" required>
+              <input type="number" class="form-control mt-2 input-lg" id="speaker-input" min="0" value="0" required>
             </div>
     
             <div class="col">
-              <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#Speaker-input'),-1)">-1</a>
+              <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#speaker-input'),-1)">-1</a>
             </div>
           </div><!-- /.row -->
     
-          <label class="form-label" for="Amp-input">Amp</label>
+          <label class="form-label" for="amp-input">Amp</label>
           <div class="row">
             <div class="col">
-              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#Amp-input'),1)">+1</a>
+              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#amp-input'),1)">+1</a>
             </div>
             <div class="col">
-              <input type="number" class="form-control mt-2 input-lg" id="Amp-input" min="0" value="0" required>
+              <input type="number" class="form-control mt-2 input-lg" id="amp-input" min="0" value="0" required>
             </div>
             <div class="col">
-              <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#Amp-input'),-1)">-1</a>
+              <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#amp-input'),-1)">-1</a>
             </div>
           </div><!-- /.row -->
     
-          <label class="form-label" for="Trap-input">Trap</label>
+          <label class="form-label" for="trap-input">Trap</label>
           <div class="row">
             <div class="col">
-              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#Trap-input'),1)">+1</a>
+              <a class="btn btn-big btn-success form-control" href="javascript:changeValue($('#trap-input'),1)">+1</a>
             </div>
     
             <div class="col">
-              <input type="number" class="form-control mt-2 input-lg" id="Trap-input" min="0" value="0" required>
+              <input type="number" class="form-control mt-2 input-lg" id="trap-input" min="0" value="0" required>
             </div>
     
             <div class="col">
-              <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#Trap-input'),-1)">-1</a>
+              <a class="btn btn-big btn-danger form-control" href="javascript:changeValue($('#trap-input'),-1)">-1</a>
             </div>
           </div><!-- /.row -->
 
@@ -419,8 +419,8 @@
     
         <div class="row">
           <div class="col-md-8">
-            <label class="form-label" for="Comment-input">Comment</label>
-            <textarea class="form-control" id="Comment-input" rows="6"></textarea>
+            <label class="form-label" for="comment-input">Comment</label>
+            <textarea class="form-control" id="comment-input" rows="6"></textarea>
           </div>
           <div class="col-md-4">
             <a href="javascript:showCodeModal()" class="btn btn-primary btn-big form-control mt-5" >Get Code</a>
@@ -460,11 +460,11 @@
       function showCodeModal() {
         $('body').addClass('was-validated');
         $('#modalQRCode').html(""); // clear the QR div's previous content
-        $('#codeModalLabel').html('Team ' + $('#TeamNumber-input').val() + ' ' + $('#TeamName-input').val() + ' - Match '+ $('#Match-input').val());
+        $('#codeModalLabel').html('Team ' + $('#teamNumber-input').val() + ' ' + $('#teamName-input').val() + ' - match '+ $('#match-input').val());
         if ($(
-                '#TeamNumber-input:valid').length > 0
-              && $('#Match-input:valid').length > 0
-              && $("input[Name='Moved-input']:valid").length > 0
+                '#teamNumber-input:valid').length > 0
+              && $('#match-input:valid').length > 0
+              && $("input[Name='moved-input']:valid").length > 0
               && $("input[Name='pickup-input']:valid").length > 0
               && $("input[Name='climb-input']:valid").length > 0
               && $("input[Name='role-input']:valid").length > 0
@@ -474,21 +474,21 @@
 //              && $("input[Name='role-input']:valid").length > 0
         ){
           var data= '{'
-                  + '"TeamNumber":'     + JSON.stringify($("#TeamNumber-input").val())
-                  + ',"TeamName":'      + JSON.stringify($("#TeamName-input").val())
-                  + ',"Match":'         + JSON.stringify($("#Match-input").val())
-                  + ',"Moved":'         + JSON.stringify($("input[name='Moved-input']:checked").val())
-                  + ',"AutoSpeaker":'   + JSON.stringify($("input[name='AutoSpeaker-input']:checked").val())
-                  + ',"AutoAmp":'       + JSON.stringify($("input[name='AutoAmp-input']:checked").val())
-                  + ',"Speaker":'       + JSON.stringify($("#Speaker-input").val())
-                  + ',"Amp":'           + JSON.stringify($("#Amp-input").val())
-                  + ',"Trap":'          + JSON.stringify($("#Trap-input").val())
+                  + '"teamNumber":'     + JSON.stringify($("#teamNumber-input").val())
+                  + ',"teamName":'      + JSON.stringify($("#teamName-input").val())
+                  + ',"match":'         + JSON.stringify($("#match-input").val())
+                  + ',"moved":'         + JSON.stringify($("input[name='moved-input']:checked").val())
+                  + ',"autoSpeaker":'   + JSON.stringify($("#autoSpeaker-input").val())
+                  + ',"autoAmp":'       + JSON.stringify($("#autoAmp-input").val())
+                  + ',"speaker":'       + JSON.stringify($("#speaker-input").val())
+                  + ',"amp":'           + JSON.stringify($("#amp-input").val())
+                  + ',"trap":'          + JSON.stringify($("#trap-input").val())
                   + ',"pickup":'        + JSON.stringify($("input[name='pickup-input']:checked").val())
                   + ',"climb":'         + JSON.stringify($("input[name='climb-input']:checked").val())
                   + ',"role":'          + JSON.stringify($("input[name='role-input']:checked").val())
                   + ',"broken":'        + JSON.stringify($("input[name='broken-input']:checked").val())
                   + ',"disabled":'      + JSON.stringify($("input[name='disabled-input']:checked").val())
-                  + ',"Comment":'       + JSON.stringify($("#Comment-input").val())
+                  + ',"comment":'       + JSON.stringify($("#comment-input").val())
                   + '}';
           new QRCode(document.getElementById("modalQRCode"), {text:data,width:800,height:800,correctLevel:QRCode.CorrectLevel.L});
           $('#modalQRCode > img').addClass('img-fluid');
