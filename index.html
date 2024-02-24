@@ -141,9 +141,9 @@
     
           <div class="col-md">
             <!--These are the team numbers and corrasponding names in the drop down menu-->
-            <label for="teamNumber-input" class="form-label">Team Number</label>
-            <select class="form-control" id="teamNumber-input" required
-              onchange="$('#teamName-input').val(this.options[this.selectedIndex].dataset.teamname);">
+            <label for="TeamNumber-input" class="form-label">Team Number</label>
+            <select class="form-control" id="TeamNumber-input" required
+              onchange="$('#TeamName-input').val(this.options[this.selectedIndex].dataset.teamname);">
               <option disabled selected value="">(select team)</option>
               <!-- Change team numbers here -->
               <option value="60" data-teamname="Bionic Bulldogs">60</option>
@@ -183,13 +183,13 @@
           </div>
     
           <div class="col-md">
-            <label for="teamName-input" class="form-label">Team Name</label>
-            <input type="text" class="form-control" id="teamName-input">
+            <label for="TeamName-input" class="form-label">Team Name</label>
+            <input type="text" class="form-control" id="TeamName-input">
           </div>
     
           <div class="col-md">
-            <label for="match-input" class="form-label">Match</label>
-            <input type="number" class="form-control" id="match-input" min="1" required>
+            <label for="Match-input" class="form-label">Match</label>
+            <input type="number" class="form-control" id="Match-input" min="1" required>
     
             <div class="invalid-feedback">Please set the match number.</div>
           </div>
@@ -465,10 +465,10 @@
       function showCodeModal() {
         $('body').addClass('was-validated');
         $('#modalQRCode').html(""); // clear the QR div's previous content
-        $('#codeModalLabel').html('Team ' + $('#teamNumber-input').val() + ' ' + $('#teamName-input').val() + ' - match '+ $('#match-input').val());
+        $('#codeModalLabel').html('Team ' + $('#TeamNumber-input').val() + ' ' + $('#TeamName-input').val() + ' - Match '+ $('#Match-input').val());
         if ($(
-                '#teamNumber-input:valid').length > 0
-              && $('#match-input:valid').length > 0
+                '#TeamNumber-input:valid').length > 0
+              && $('#Match-input:valid').length > 0
               && $("input[Name='moved-input']:valid").length > 0
               && $("input[Name='pickup-input']:valid").length > 0
               && $("input[Name='climb-input']:valid").length > 0
@@ -479,8 +479,8 @@
 //              && $("input[Name='role-input']:valid").length > 0
         ){
           var data= '{'
-                  + '"TeamNumber":'     + JSON.stringify($("#teamNumber-input").val())
-                  + ',"Match":'         + JSON.stringify($("#match-input").val())
+                  + '"TeamNumber":'     + JSON.stringify($("#TeamNumber-input").val())
+                  + ',"Match":'         + JSON.stringify($("#Match-input").val())
                   + ',"moved":'         + JSON.stringify($("input[name='moved-input']:checked").val())
                   + ',"autoSpeaker":'   + JSON.stringify($("#autoSpeaker-input").val())
                   + ',"autoAmp":'       + JSON.stringify($("#autoAmp-input").val())
