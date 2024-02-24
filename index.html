@@ -479,9 +479,8 @@
 //              && $("input[Name='role-input']:valid").length > 0
         ){
           var data= '{'
-                  + '"teamNumber":'     + JSON.stringify($("#teamNumber-input").val())
-                  + ',"teamName":'      + JSON.stringify($("#teamName-input").val())
-                  + ',"match":'         + JSON.stringify($("#match-input").val())
+                  + '"TeamNumber":'     + JSON.stringify($("#teamNumber-input").val())
+                  + ',"Match":'         + JSON.stringify($("#match-input").val())
                   + ',"moved":'         + JSON.stringify($("input[name='moved-input']:checked").val())
                   + ',"autoSpeaker":'   + JSON.stringify($("#autoSpeaker-input").val())
                   + ',"autoAmp":'       + JSON.stringify($("#autoAmp-input").val())
@@ -493,7 +492,7 @@
                   + ',"role":'          + JSON.stringify($("input[name='role-input']:checked").val())
                   + ',"broken":'        + JSON.stringify($("input[name='broken-input']:checked").val())
                   + ',"disabled":'      + JSON.stringify($("input[name='disabled-input']:checked").val())
-                  + ',"comment":'       + JSON.stringify($("#comment-input").val())
+                  + ',"Comment":'       + JSON.stringify($("#comment-input").val())
                   + '}';
           new QRCode(document.getElementById("modalQRCode"), {text:data,width:800,height:800,correctLevel:QRCode.CorrectLevel.L});
           $('#modalQRCode > img').addClass('img-fluid');
